@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồng Tồ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Nền màu đen */
+            overflow: hidden;
+        }
+        label {
+            color: #fff; /* Chữ màu trắng */
+            font-size: 6em;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff, 0 0 150px #ff00ff;
+            /* Hiệu ứng phát sáng */
+            position: relative;
+            z-index: 1;
+        }
+        .image-container img {
+            position: absolute;
+            width: 160px; /* Kích thước của ảnh */
+            height: 160px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container"></div>
+    <label>Hồng Tồ</label>
+    <script>
+        const imageContainer = document.querySelector('.image-container');
+        const imgSrc = 'img/4.jpg'; // Đường dẫn tới ảnh của bạn
+        const numImages = 30; // Số lượng ảnh muốn lặp lại
+
+        for (let i = 0; i < numImages; i++) {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.style.top = `${Math.random() * 100}vh`;
+            img.style.left = `${Math.random() * 100}vw`;
+            imageContainer.appendChild(img);
+        }
+    </script>
+</body>
+</html>
